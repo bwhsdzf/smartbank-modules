@@ -6,11 +6,9 @@ import AppRoute from '../AppRoutes';
 function AppHeader() {
 
     const cartCount = 0;
-
+    const history = useHistory()
     const logoutUser = () => {
-        /**
-         * Write logic to route to login page on clicking logout button.
-         */
+        history.push("/login")
     }
 
     return (
