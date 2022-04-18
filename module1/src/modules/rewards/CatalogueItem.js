@@ -4,6 +4,9 @@ import amazon from '../../images/amazon.png';
 import flipkart from '../../images/flipkart.jpg';
 import bookmyshow from '../../images/bookmyshow.png';
 import titan from '../../images/titan.jpg';
+import starbucks from '../../images/starbucks.png';
+import walmart from '../../images/walmart.png';
+import uber from '../../images/uber.jpg';
 import { LoginContext } from '../../contexts/LoginContext';
 import { CartContext } from '../../contexts/CartContext';
 
@@ -36,7 +39,14 @@ const CatalogueItem = ({ catalogue }) => {
             return bookmyshow;
         } else if (item.match(/titan/i) != null) {
             return titan;
+        } else if (item.match(/starbucks/i) != null) {
+            return starbucks;
+        }else if (item.match(/walmart/i) != null) {
+            return walmart;
+        }else if (item.match(/uber/i) != null) {
+            return uber;
         }
+        
 
     }
 

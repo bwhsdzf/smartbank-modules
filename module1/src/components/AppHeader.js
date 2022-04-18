@@ -30,7 +30,7 @@ function AppHeader() {
                         </li>
                         <li className="nav-item navbar-link">
                             {/* Provide Rewards routing link */}
-                            <Link className="btn btn-success" to="#">
+                            <Link className="btn btn-success" to="/rewards">
                                 Rewards Catalogue
                             </Link>
 
@@ -42,7 +42,7 @@ function AppHeader() {
 
                     <div className="header-right">
                         {/* Provide cart routing link */}
-                        <Link type="button" className="btn btn-success" to="#">
+                        <Link type="button" className="btn btn-success" to="/cart">
                             <i className="fas fa-shopping-cart" />&nbsp; My Cart &nbsp;
                             <span className="badge badge-light">
                                 {cartCount}
