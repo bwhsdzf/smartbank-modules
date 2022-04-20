@@ -48,14 +48,12 @@ function RewardCataloguePage() {
                     catalogueListLoaded ?
                         (
                             <div className="row" >
-                                <h6>Get the items from api</h6>
+                                
                                 {catalogueList.map(c => (
 
                                     <div className="col-md-4" key={c.id}>
 
-                                        {
-                                            <CatalogueItem catalogue={c}/>
-                                        }
+                                        <CatalogueItem catalogue={c} />
                                         
                                         <br></br>
                                     </div>

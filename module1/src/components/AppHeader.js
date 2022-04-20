@@ -1,14 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import '../styles/AppHeader.css'
 import AppRoute from '../AppRoutes';
+import { LoginContext } from '../contexts/LoginContext';
+import { CartContext } from '../contexts/CartContext';
 
 function AppHeader() {
 
-    const cartCount = 0;
-    const history = useHistory()
+
+    const { cartCount } = useContext(CartContext)
+    const loginContext = useContext(LoginContext)
+    console.log(loginContext)
+
+    let history = useHistory();
     const logoutUser = () => {
+        loginContext.logoutUser()
         history.push("/login")
+        /**
+         * Write logic to route to login page on clicking logout button.
+         */
     }
 
     return (
@@ -23,7 +33,7 @@ function AppHeader() {
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item navbar-link active">
                             {/* Provide Homepage routing link */}
-                            <Link className="nav-link" to="#">
+                            <Link className="nav-link" to="/">
                                 <i className="fas fa-home"></i>
                                 <span className="sr-only">(current)</span>
                             </Link>
@@ -54,7 +64,7 @@ function AppHeader() {
                     <div className="header-right">
 
                         <Link type="button" className="btn btn-success" to="/">
-                            <i className="fas fa-user" />&nbsp; Welcome Guest
+                            <i className="fas fa-user" />&nbsp; Welcome {loginContext.loggedInUser.userName ==='' ? 'Guest' : loginContext.loggedInUser.userName}
                             <span className="sr-only">logged in user</span>
                         </Link>
                     </div>

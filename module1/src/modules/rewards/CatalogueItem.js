@@ -1,16 +1,17 @@
 import React, { useContext, useEffect } from 'react';
 import './CatalogueItem.css';
 import amazon from '../../images/amazon.png';
+import walmart from '../../images/walmart.jpg';
+import starbucks from '../../images/starbucks.png';
+import uber from '../../images/uber.png';
 import flipkart from '../../images/flipkart.jpg';
 import bookmyshow from '../../images/bookmyshow.png';
 import titan from '../../images/titan.jpg';
-import starbucks from '../../images/starbucks.png';
-import walmart from '../../images/walmart.png';
-import uber from '../../images/uber.jpg';
 import { LoginContext } from '../../contexts/LoginContext';
 import { CartContext } from '../../contexts/CartContext';
 
 const CatalogueItem = ({ catalogue }) => {
+    
 
     const {
         item,
@@ -39,19 +40,19 @@ const CatalogueItem = ({ catalogue }) => {
             return bookmyshow;
         } else if (item.match(/titan/i) != null) {
             return titan;
+        } else if (item.match(/walmart/i) != null) {
+            return walmart;
         } else if (item.match(/starbucks/i) != null) {
             return starbucks;
-        }else if (item.match(/walmart/i) != null) {
-            return walmart;
-        }else if (item.match(/uber/i) != null) {
+        } else if (item.match(/uber/i) != null) {
             return uber;
         }
-        
 
     }
 
 
     const performCartOperation = (e) => {
+        
         e.preventDefault();
         addToCart(catalogue);
     }
@@ -82,9 +83,10 @@ const CatalogueItem = ({ catalogue }) => {
                             Redeemption Points : {redeemptionPoint}
                         </h6><br />
                         {
+                            //Perform changes here?
                             isLoggedIn ? (
                                 <div>
-                                    <button className="btn btn-success cart-button" onClick={() =>addToCart(catalogue)}>
+                                    <button className="btn btn-success cart-button" onClick={performCartOperation}>
                                         <i className="fas fa-cart-plus"></i>&nbsp;
                                         Add to cart
                                  </button>

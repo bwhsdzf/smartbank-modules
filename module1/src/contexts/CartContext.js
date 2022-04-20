@@ -26,7 +26,7 @@ function CartContextProvider(props) {
                 totalRedeemPoints: cartSummary.totalRedeemPoints + redeemptionPoint
             })
         }
-
+        console.log(cartItems)
     }
 
     const afterPurchase = () => {
