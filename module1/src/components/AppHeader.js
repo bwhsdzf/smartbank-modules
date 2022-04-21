@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/AppHeader.css'
 import AppRoute from '../AppRoutes';
 import { LoginContext } from '../contexts/LoginContext';
@@ -12,10 +12,10 @@ function AppHeader() {
     const loginContext = useContext(LoginContext)
     console.log(loginContext)
 
-    let history = useHistory();
+    let navigate = useNavigate();
     const logoutUser = () => {
         loginContext.logoutUser()
-        history.push("/login")
+        navigate("/login")
         /**
          * Write logic to route to login page on clicking logout button.
          */
