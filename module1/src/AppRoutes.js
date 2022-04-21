@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import Homepage from './modules/Homepage';
 import LoginPage from './modules/login/LoginPage';
 import CartPage from './modules/cart/CartPage';
@@ -10,12 +10,14 @@ import ConfirmOrder from './modules/order-confirm/ConfirmOrderPage';
 const AppRoute = () => {
     return ( 
         <div>
-            <Route path="/" exact component={Homepage} />
-            <Route path="/login" component={LoginPage} />
-            <Route path="/cart" component={CartPage} />
-            <Route path="/rewards" component={RewardCataloguePage} />
-            <Route path="/order-confirm" component={ConfirmOrder} />
-            <Route path="/logout" component={LoginPage} />
+            <Routes>
+                <Route path="/" exact element={<Homepage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="/rewards" element={<RewardCataloguePage />} />
+                <Route path="/order-confirm" element={<ConfirmOrder />} />
+                <Route path="/logout" element={<LoginPage />} />
+            </Routes>
         </div>
      );
 }
