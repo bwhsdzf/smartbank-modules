@@ -14,4 +14,9 @@ public class HomeController {
 		return "Welcome to Smart Bank Credit Card APIs";
 	}
 
+	@GetMapping("/healthcheck")
+	public String healthcheck() {
+		return "200 OK";
+	}
+
 }
