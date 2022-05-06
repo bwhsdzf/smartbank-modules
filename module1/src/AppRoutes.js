@@ -17,6 +17,9 @@ const AppRoute = () => {
                 <Route path="/rewards" element={<RewardCataloguePage />} />
                 <Route path="/order-confirm" element={<ConfirmOrder />} />
                 <Route path="/logout" element={<LoginPage />} />
+                <Route path="/healthcheck">
+                    <h3>200 OK</h3>
+                </Route>
             </Routes>
         </div>
      );
