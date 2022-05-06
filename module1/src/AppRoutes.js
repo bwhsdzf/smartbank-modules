@@ -5,6 +5,7 @@ import LoginPage from './modules/login/LoginPage';
 import CartPage from './modules/cart/CartPage';
 import RewardCataloguePage from './modules/rewards/RewardCataloguePage';
 import ConfirmOrder from './modules/order-confirm/ConfirmOrderPage';
+import HealthCheck from './HealthCheck';
 
 
 const AppRoute = () => {
@@ -17,9 +18,7 @@ const AppRoute = () => {
                 <Route path="/rewards" element={<RewardCataloguePage />} />
                 <Route path="/order-confirm" element={<ConfirmOrder />} />
                 <Route path="/logout" element={<LoginPage />} />
-                <Route path="/healthcheck">
-                    <h3>200 OK</h3>
-                </Route>
+                <Route path="/healthcheck" element={<HealthCheck />}/>
             </Routes>
         </div>
      );
